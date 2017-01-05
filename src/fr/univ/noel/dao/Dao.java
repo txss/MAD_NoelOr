@@ -9,8 +9,6 @@ public class Dao implements IGiftPackDao, IProductDao {
 
 	
 	
-	
-	
 	@Override
 	public ArrayList<Product> getAllProducts() {
 		// TODO Auto-generated method stub

@@ -6,7 +6,7 @@ public class MajorPrice implements IStrategy{
 
 	@Override
 	public double computePrice(Product product) {
-		return product.getPrice() * 1.5;
+		return product.getPrice() * 2;
 	}
 
 }

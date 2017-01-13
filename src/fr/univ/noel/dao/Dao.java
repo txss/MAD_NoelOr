@@ -46,12 +46,17 @@ public class Dao implements IGiftPackDao, IProductDao {
 	@Override
 	public Product getProduct(int id) {
 		// TODO Auto-generated method stub
-		return prods.get(0);
+		Product p = new Product();
+		p.setId(prods.get(id).getId());
+		p.setName(prods.get(id).getName());
+		p.setPrice(prods.get(id).getPrice());
+		p.setStock(prods.get(id).getStock());
+		return p;
 	}
 
 	@Override
 	public boolean saveProduct(Product product) {
-		prods.add(product);
+//		prods.add(product);
 		return true;
 	}
 

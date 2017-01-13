@@ -19,7 +19,7 @@ public class ProductController {
 
 	protected final Log logger = LogFactory.getLog(getClass());
 	
-	ProductManager productManager;
+	ProductManager productManager = new ProductManager();
 	
 
 	@RequestMapping(value = "/product_List", method = RequestMethod.GET)

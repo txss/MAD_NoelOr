@@ -10,7 +10,7 @@ import fr.univ.noel.dao.Dao;
 @Service
 public class ProductManager {
 	
-	Dao dao;
+	Dao dao = new Dao();
 	
 	public ProductManager(){}
 	

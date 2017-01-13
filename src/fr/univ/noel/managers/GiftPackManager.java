@@ -10,7 +10,7 @@ import fr.univ.noel.dao.Dao;
 @Service
 public class GiftPackManager {
 
-	Dao dao;
+	Dao dao = new Dao();
 
 	
 	public GiftPackManager(){}

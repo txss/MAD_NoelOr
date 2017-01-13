@@ -7,6 +7,7 @@ import fr.univ.noel.beans.Product;
 
 public class Dao implements IGiftPackDao, IProductDao {
 
+	public Dao() {}
 	
 	
 	@Override

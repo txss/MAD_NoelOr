@@ -1,3 +1,4 @@
+<%@ include file="/WEB-INF/jsp/templates/include.jsp" %>
 <html>
   <head><title>Hello :: Spring Application</title></head>
   <body>

@@ -48,7 +48,9 @@ public class ProductManager {
 		return dao.saveProduct(product);
 	}
 	
-	public boolean deleteProduct(Product product){
+	public boolean deleteProduct(int id){
+		Product product = new Product();
+		product.setId(id);
 		
 		if(getProduct(product.getId()) != null)
 			return dao.deleteProduct(product);

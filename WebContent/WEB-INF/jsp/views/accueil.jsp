@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/jsp/templates/include.jsp" %>
-<html>
-  <head><title>Hello :: Spring Application</title></head>
-  <body>
-    <h1>Hello - Spring Application</h1>
-  </body>
-</html>
+<%@ include file="/WEB-INF/jsp/templates/header.jsp"%>
+<%@ include file="/WEB-INF/jsp/templates/nav_bar.jsp"%>
+
+Accueil du magasin
+
+<%@ include file="/WEB-INF/jsp/templates/footer.jsp" %>

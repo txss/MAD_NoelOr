@@ -7,25 +7,52 @@ import fr.univ.noel.beans.Product;
 
 public class Dao implements IGiftPackDao, IProductDao {
 
-	public Dao() {}
+	
+	
+	ArrayList<Product> prods = new ArrayList<Product>();
+	
+	
+	public Dao() {
+		Product p0 = new Product();
+		p0.setId(0);
+		p0.setName("Stylo");
+		p0.setPrice(0.50);
+		p0.setStock(1000);
+		
+		Product p1 = new Product();
+		p1.setId(1);
+		p1.setName("feuilles");
+		p1.setPrice(1.5);
+		p1.setStock(50);
+		
+		Product p2 = new Product();
+		p2.setId(2);
+		p2.setName("souris");
+		p2.setPrice(10);
+		p2.setStock(10);
+		
+		prods.add(p0);
+		prods.add(p1);
+		prods.add(p2);
+	}
 	
 	
 	@Override
 	public ArrayList<Product> getAllProducts() {
 		// TODO Auto-generated method stub
-		return null;
+		return prods;
 	}
 
 	@Override
 	public Product getProduct(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return prods.get(0);
 	}
 
 	@Override
 	public boolean saveProduct(Product product) {
-		// TODO Auto-generated method stub
-		return false;
+		prods.add(product);
+		return true;
 	}
 
 	@Override

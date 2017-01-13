@@ -44,4 +44,17 @@ public class ProductController {
 		return "show_product";
 	}
 	
+	
+	@RequestMapping(value = "/delete_product", method = RequestMethod.GET)
+	public String deleteProduct(
+			HttpServletRequest request,
+			@RequestParam(value = "id", required = false) int productID) {
+				
+		HttpSession session = request.getSession();
+		
+		session.setAttribute("product", productManager.deleteProduct(productID));
+		
+		logger.info("Returning lister_product view, after delete product");
+		return "lister_product";
+	}
 }

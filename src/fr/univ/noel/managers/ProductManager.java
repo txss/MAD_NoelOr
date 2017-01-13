@@ -6,11 +6,13 @@ import org.springframework.stereotype.Service;
 
 import fr.univ.noel.beans.Product;
 import fr.univ.noel.dao.Dao;
+import fr.univ.noel.utility.ComputeProductPrice;
 
 @Service
 public class ProductManager {
 	
 	Dao dao = new Dao();
+	ComputeProductPrice compute = new ComputeProductPrice();
 	
 	public ProductManager(){}
 	
@@ -27,8 +29,10 @@ public class ProductManager {
 		return dao.getAllProducts();
 	}
 	
-	public Product getProduct(int id){ // TODO ajouter la fonction de calcule du prix
-		return dao.getProduct(id);
+	public Product getProduct(int id){
+		Product p = dao.getProduct(id);
+		p.setPrice( compute.computePrice(p) );
+		return p;
 	}
 	
 	public boolean updateProduct(Product product){

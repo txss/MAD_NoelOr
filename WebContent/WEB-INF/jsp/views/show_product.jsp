@@ -15,5 +15,5 @@
 				<td>${product.stock}</td>
 			</tr>
 		</table>
-
+		<a class="btn btn-primary" href="buy_product.htm?id=${product.id}">Acheter</a><br/>
 <%@ include file="/WEB-INF/jsp/templates/footer.jsp" %>

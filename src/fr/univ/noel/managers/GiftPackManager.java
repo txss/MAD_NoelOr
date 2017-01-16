@@ -11,7 +11,7 @@ import fr.univ.noel.dao.Dao;
 public class GiftPackManager {
 
 	Dao dao = new Dao();
-
+	ProductManager prod = new ProductManager();
 	
 	public GiftPackManager(){}
 	
@@ -24,7 +24,7 @@ public class GiftPackManager {
 	}
 	
 	
-	public ArrayList<GiftPack> allGiftPacks(){
+	public ArrayList<GiftPack> allGiftPacks(){ // TODO test si le pack est complet
 		return dao.getAllGiftPack();
 	}
 	
@@ -43,9 +43,22 @@ public class GiftPackManager {
 		return false;
 	}
 	
-	public boolean delete(GiftPack giftPack){
+	public boolean delete(int id){
+		GiftPack giftPack = new GiftPack();
+		giftPack.setId(id);
+		
 		if(dao.getGiftPack(giftPack.getId()) != null)
 			return dao.deleteGiftPack(giftPack);
 		return false;
+	}
+	
+	public GiftPack buyGiftPack(int id){
+		GiftPack pack = getGiftPack(id);
+		
+		for (int i = 0; i < pack.getProducts().size(); i++){
+			prod.buyProduct(pack.getProducts().get(i).getId());
+		}
+		
+		return pack;
 	}
 }

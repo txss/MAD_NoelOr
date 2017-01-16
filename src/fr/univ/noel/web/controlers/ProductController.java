@@ -47,14 +47,24 @@ public class ProductController {
 	
 	@RequestMapping(value = "/delete_product", method = RequestMethod.GET)
 	public String deleteProduct(
+			@RequestParam(value = "id", required = false) int productID) {
+				
+		productManager.deleteProduct(productID);
+		
+		logger.info("Returning lister_product view, after delete product id " + productID);
+		return "lister_product";
+	}
+	
+	@RequestMapping(value = "/buy_product", method = RequestMethod.GET)
+	public String buyProduct(
 			HttpServletRequest request,
 			@RequestParam(value = "id", required = false) int productID) {
 				
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("product", productManager.deleteProduct(productID));
+		session.setAttribute("product", productManager.buyProduct(productID));
 		
-		logger.info("Returning lister_product view, after delete product");
-		return "lister_product";
+		logger.info("Returning confirm_buy_product view, after delete product");
+		return "commande_confirm";
 	}
 }

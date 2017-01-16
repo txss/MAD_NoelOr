@@ -9,7 +9,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="/NoelOr/accueil.htm">Accueil</a></li>
 				<li><a href="/NoelOr/products/product_List.htm">Liste produits</a></li>
-				<li><a href="/NoelOr/products/giftPack_List.htm">Liste giftPacks</a></li>
+				<li><a href="/NoelOr/gift_packs/giftPack_List.htm">Liste giftPacks</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

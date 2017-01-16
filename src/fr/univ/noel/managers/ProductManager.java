@@ -58,4 +58,17 @@ public class ProductManager {
 		return false;
 	}
 	
+	public Product buyProduct(int productID){
+		Product prod = getProduct(productID);
+		
+		if(prod != null){
+			if (prod.getStock() >= 1)
+			prod.setStock(prod.getStock()-1);
+			updateProduct(prod);
+			
+			return prod;
+		}
+			
+		return null;
+	}
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import fr.univ.noel.beans.GiftPack;
 import fr.univ.noel.managers.GiftPackManager;
 
 @Controller()
@@ -35,10 +36,17 @@ public class GiftPackController {
 	public String showGiftpack(
 			HttpServletRequest request,
 			@RequestParam(value = "id", required = false) int giftpackID) {
-				
-		HttpSession session = request.getSession();
 		
-		session.setAttribute("giftpack", giftpackManager.getGiftPack(giftpackID));
+		double price = 0;
+		HttpSession session = request.getSession();
+		GiftPack pack = giftpackManager.getGiftPack(giftpackID);
+		
+		for(int i = 0; i < pack.getProducts().size(); i++){
+			price += pack.getProducts().get(i).getPrice();
+		}
+		
+		session.setAttribute("giftpack", pack);
+		session.setAttribute("price", price);
 		logger.info("Returning show_giftpack view");
 		return "show_giftpack";
 	}
@@ -58,7 +66,7 @@ public class GiftPackController {
 	public String buyProduct(
 			HttpServletRequest request,
 			@RequestParam(value = "id", required = false) int giftpackID) {
-				
+			
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("giftpack", giftpackManager.buyGiftPack(giftpackID));

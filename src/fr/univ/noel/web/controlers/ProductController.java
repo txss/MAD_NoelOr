@@ -42,7 +42,7 @@ public class ProductController {
 		session.setAttribute("product", productManager.getProduct(productID));
 		
 		logger.info("Returning show_product view");
-		return "show_product"
+		return "show_product";
 	}
 	
 	

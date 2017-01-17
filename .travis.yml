@@ -1,2 +1,13 @@
+langage: java
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+      
+jdk:
+  - oraclejdk8
+      
 script:
-  echo "Bonjour"
+  mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V

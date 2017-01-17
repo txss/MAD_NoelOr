@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stock>
+	<products>
+		<product>
+			<productID>0</productID>
+			<name>Stylos bille</name>
+			<price>2</price>
+			<stock>100</stock>
+		</product>
+		<product>
+			<productID>1</productID>
+			<name>Stylos roller</name>
+			<price>2.5</price>
+			<stock>10</stock>
+		</product>
+		<product>
+			<productID>2</productID>
+			<name>Souris</name>
+			<price>5</price>
+			<stock>1000</stock>
+		</product>
+	</products>
+	<giftpacks>
+		<pack>
+			<packID>0</packID>
+			<productList>
+				<productID>0</productID>
+				<productID>2</productID>
+			</productList>
+		</pack>
+		<pack>
+			<packID>1</packID>
+			<productList>
+				<productID>0</productID>
+				<productID>1</productID>
+				<productID>2</productID>
+			</productList>
+		</pack>
+		<pack>
+			<packID>2</packID>
+			<productList>
+				<productID>1</productID>
+				<productID>2</productID>
+			</productList>
+		</pack>
+	</giftpacks>
+</stock>

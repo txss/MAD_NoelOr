@@ -40,6 +40,7 @@ public class ProductController {
 		HttpSession session = request.getSession();
 		
 		session.setAttribute("product", productManager.getProduct(productID));
+		
 		logger.info("Returning show_product view");
 		return "show_product";
 	}

@@ -6,13 +6,14 @@ import org.springframework.stereotype.Service;
 
 import fr.univ.noel.beans.Product;
 import fr.univ.noel.dao.Dao;
-import fr.univ.noel.utility.ComputeProductPrice;
+import fr.univ.noel.utility.IStrategy;
+import fr.univ.noel.utility.NormalMinorMajor;
 
 @Service
 public class ProductManager {
 	
 	Dao dao = new Dao();
-	ComputeProductPrice compute = new ComputeProductPrice();
+	IStrategy compute = new NormalMinorMajor();
 	
 	public ProductManager(){}
 	

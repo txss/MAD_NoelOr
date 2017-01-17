@@ -23,7 +23,7 @@ public class Dao implements IGiftPackDao, IProductDao {
 		p1.setId(1);
 		p1.setName("feuilles");
 		p1.setPrice(1.5);
-		p1.setStock(50);
+		p1.setStock(51);
 		
 		Product p2 = new Product();
 		p2.setId(2);

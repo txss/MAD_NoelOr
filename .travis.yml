@@ -1,3 +1,2 @@
-langage: java
-sudo: false
-script: mvn clean verify
+script:
+  echo "Bonjour"
